@@ -34,9 +34,9 @@ class Register extends React.Component {
 				name:this.state.name
 			})
 		})
-		.then(response => response.json())
+		//.then(response => response.json())
 		.then(user =>{
-			if(user){
+			if(user.id){
 				this.props.loadUser(user)
 				this.props.onRouteChange('home')
 			}
@@ -52,9 +52,10 @@ class Register extends React.Component {
 				<main className="pa4 black-80"> <div className="measure center">
 				    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 				      <legend className="f2 fw6 ph0 mh0">Register</legend>
-				      <div className="mt3">
+				  
+				       <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Name</label>
-				        <input onChange={this.onNameChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="name" name="name"  id="name" />
+				        <input onChange={this.onNameChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="email-address"  id="email-address" />
 				      </div>
 				      <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
